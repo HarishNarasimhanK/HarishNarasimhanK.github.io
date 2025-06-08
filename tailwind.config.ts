@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,39 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// Elegant minimalism palette
+				elegant: {
+					white: '#FFFFFF',
+					light: '#F8F9FA',
+					gray: {
+						100: '#F1F3F4',
+						200: '#E8EAED',
+						300: '#DADCE0',
+						400: '#BDC1C6',
+						500: '#9AA0A6',
+						600: '#80868B',
+						700: '#5F6368',
+						800: '#3C4043',
+						900: '#202124'
+					},
+					charcoal: '#333333'
 				}
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				display: ['Playfair Display', 'serif'],
+			},
+			fontSize: {
+				'display-xl': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+				'display-lg': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+				'display-md': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+				'display-sm': ['2.25rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+			},
+			spacing: {
+				'18': '4.5rem',
+				'28': '7rem',
+				'32': '8rem',
+				'36': '9rem',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +108,33 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-in': 'slide-in 0.6s ease-out'
 			}
 		}
 	},
