@@ -20,7 +20,8 @@ const Projects = () => {
       solution: "Built a Streamlit application leveraging Groq API and LangChain to automatically generate concise, context-aware summaries from website URLs and YouTube video links.",
       results: "Delivered a clean, user-friendly interface that enables rapid content consumption, saving users significant time while maintaining content comprehension.",
       technologies: ["Streamlit", "Groq API", "LangChain", "Web Scraping"],
-      category: "Web Application"
+      category: "Web Application",
+      link: "https://github.com/HarishNarasimhanK/Website-YouTube-URL-Summarizer"
     },
     {
       title: "Sentiment Analysis on Movie Reviews",
@@ -29,7 +30,8 @@ const Projects = () => {
       solution: "Developed a sophisticated Streamlit-based sentiment analysis tool that classifies review text as positive or negative using advanced machine learning models.",
       results: "Achieved high accuracy in sentiment classification, providing instant feedback on movie reception and enabling data-driven content recommendations.",
       technologies: ["Streamlit", "Machine Learning", "Text Classification", "Python"],
-      category: "Data Science"
+      category: "Data Science",
+      link: "https://github.com/HarishNarasimhanK/IMDB-MovieReview-SentimentAnalysis-using-SimpleRNN"
     },
     {
       title: "Diabetes Prediction System",
@@ -74,9 +76,22 @@ const Projects = () => {
                     <IconComponent size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-xl text-elegant-charcoal mb-2">
-                      {project.title}
-                    </h3>
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-xl text-elegant-charcoal mb-2">
+                        {project.title}
+                      </h3>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 text-elegant-gray-600 hover:text-elegant-charcoal transition-colors duration-300"
+                          aria-label="View Project"
+                        >
+                          <Github size={20} />
+                        </a>
+                      )}
+                    </div>
                     <span className="text-sm text-elegant-gray-500 bg-elegant-gray-100 px-3 py-1 rounded-full">
                       {project.category}
                     </span>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Code, Brain, Database, Cpu, Globe, Zap } from 'lucide-react';
+import { Code, Brain, Database, Cpu, Zap } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -29,12 +29,6 @@ const Skills = () => {
       description: "Cutting-edge technology exploration and implementation"
     },
     {
-      title: "Development",
-      icon: Globe,
-      skills: ["Application Development", "Web Technologies", "API Integration"],
-      description: "Full-stack development capabilities"
-    },
-    {
       title: "Competitive Programming",
       icon: Zap,
       skills: ["LeetCode", "CodeChef", "Codeforces", "500+ Problems Solved"],
@@ -47,6 +41,24 @@ const Skills = () => {
     "Reinforcement Learning - NPTEL",
     "Generative AI with LangChain and Hugging Face - Udemy",
     "IBM Machine Learning Workshop - DAKSH"
+  ];
+
+  const codingPlatforms = [
+    {
+      name: "LeetCode",
+      url: "https://leetcode.com/u/Harish_Narasimhan_K/",
+      description: "500+ problems solved"
+    },
+    {
+      name: "CodeChef",
+      url: "https://www.codechef.com/users/harishk_0135",
+      description: "Active participant in contests"
+    },
+    {
+      name: "Codeforces",
+      url: "#",
+      description: "Regular competitive programming"
+    }
   ];
 
   return (
@@ -94,6 +106,33 @@ const Skills = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Coding Platforms */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <h3 className="font-display font-semibold text-2xl text-elegant-charcoal mb-8 text-center">
+            Coding Platforms
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {codingPlatforms.map((platform, index) => (
+              <div key={index} className="text-center p-6 bg-elegant-white rounded-lg border border-elegant-gray-200 hover:shadow-md transition-all duration-300">
+                <h4 className="font-semibold text-lg text-elegant-charcoal mb-2">
+                  {platform.name}
+                </h4>
+                <p className="text-sm text-elegant-gray-600 mb-4">{platform.description}</p>
+                {platform.url !== "#" && (
+                  <a
+                    href={platform.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-elegant-charcoal hover:text-elegant-gray-600 transition-colors duration-300 text-sm font-medium"
+                  >
+                    View Profile →
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Certifications */}

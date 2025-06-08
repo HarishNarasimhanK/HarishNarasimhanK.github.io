@@ -61,13 +61,13 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/HarishNarasimhank",
-      username: "HarishNarasimhank"
+      href: "https://github.com/HarishNarasimhanK",
+      username: "HarishNarasimhanK"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/harish-narasimhan-k-17ba45254",
+      href: "https://www.linkedin.com/in/harish-narasimhan-k-17ba45254/",
       username: "harish-narasimhan-k"
     }
   ];

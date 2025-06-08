@@ -11,7 +11,7 @@ const About = () => {
           <div className="relative animate-fade-in">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face"
+                src="/lovable-uploads/1dc3e4af-f4b5-4876-8078-1b5e87e4e7b8.png"
                 alt="Harish Narasimhan K - Professional Headshot"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
               />
@@ -38,9 +38,9 @@ const About = () => {
                 </p>
                 <p>
                   Beyond academics, I lead the Competitive Programming Cluster at my university and have solved 
-                  over 500 problems across various coding platforms. My research work in block-based separable 
-                  reversible data hiding using homomorphic encryption demonstrates my commitment to advancing 
-                  the field of secure AI applications.
+                  over 500 problems across various coding platforms. My research on block-based separable 
+                  reversible data hiding using homomorphic encryption underscores my dedication to enhancing 
+                  secure and efficient data hiding techniques.
                 </p>
               </div>
             </div>
