@@ -1,0 +1,17 @@
+# Harish Narasimhan K — Portfolio
+
+> Portfolio of Harish Narasimhan K, an AI & Machine Learning Engineer specializing in NLP, generative AI, and data science.
+
+Harish is a Computer Science Engineering undergraduate at SASTRA Deemed To Be University (CGPA 9.37) with expertise in machine learning, NLP, generative AI, LangChain, and Hugging Face. He has built projects spanning conversational RAG systems, document summarization, sentiment analysis, and healthcare prediction, and has published research on block-based separable reversible data hiding using homomorphic encryption.
+
+## Pages
+
+- [Home](/): Hero, about, projects, skills, testimonials, and contact — a single-page portfolio.
+
+## Sections
+
+- [About](/#about): Professional narrative, education, and key highlights.
+- [Projects](/#projects): Case studies covering Conversational PDF Query System, Document Summarization Web App, Sentiment Analysis on Movie Reviews, Diabetes Prediction, and homomorphic-encryption research.
+- [Skills](/#skills): Programming languages, AI/ML stack, coding platforms (LeetCode, CodeChef), and certifications.
+- [Testimonials](/#testimonials): Client quotes and achievements.
+- [Contact](/#contact): Email, phone, GitHub, LinkedIn, and message form.

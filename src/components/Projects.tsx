@@ -92,7 +92,7 @@ const Projects = () => {
                         </a>
                       )}
                     </div>
-                    <span className="text-sm text-elegant-gray-500 bg-elegant-gray-100 px-3 py-1 rounded-full">
+                    <span className="text-sm text-elegant-gray-700 bg-elegant-gray-100 px-3 py-1 rounded-full">
                       {project.category}
                     </span>
                   </div>

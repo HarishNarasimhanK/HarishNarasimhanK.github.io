@@ -116,7 +116,7 @@ const Contact = () => {
                           <div className="text-elegant-gray-600">{method.value}</div>
                         )}
                         {method.secondary && (
-                          <div className="text-sm text-elegant-gray-500 mt-1">
+                          <div className="text-sm text-elegant-gray-700 mt-1">
                             {method.secondary}
                           </div>
                         )}
