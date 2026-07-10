@@ -89,7 +89,7 @@ const Testimonials = () => {
                   <div className="text-sm text-elegant-gray-600">
                     {testimonial.role}
                   </div>
-                  <div className="text-sm text-elegant-gray-500">
+                  <div className="text-sm text-elegant-gray-700">
                     {testimonial.company}
                   </div>
                 </div>
@@ -119,7 +119,7 @@ const Testimonials = () => {
                 <div className="text-sm text-elegant-gray-600 mb-2">
                   {achievement.description}
                 </div>
-                <div className="text-xs text-elegant-gray-500 font-medium">
+                <div className="text-xs text-elegant-gray-700 font-medium">
                   {achievement.year}
                 </div>
               </div>
