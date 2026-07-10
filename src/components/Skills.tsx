@@ -7,7 +7,7 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: Code,
-      skills: ["Python", "C++", "Java"],
+      skills: ["Python", "Java", "Rust", "C++", "SQL"],
       description: "Strong foundation in multiple programming paradigms"
     },
     {
