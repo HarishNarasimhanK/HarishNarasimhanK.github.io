@@ -1,16 +1,38 @@
 
-import React from 'react';
-import { ExternalLink, Github, MessageSquare, FileText, Brain, Globe } from 'lucide-react';
+import React, { useState } from 'react';
+import { Github, MessageSquare, FileText, Brain, Globe, Video, Terminal, Plane } from 'lucide-react';
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
+    {
+      title: "DemystifyAI",
+      icon: Video,
+      problem: "General LLMs default to academic jargon and formulas when explaining technical content, forcing users to hand-craft massive prompts every time to get first-principles explanations.",
+      solution: "Built an autonomous multi-agent engineering pipeline that ingests educational YouTube videos and produces comprehensive, first-principles explanations by translating jargon into plain-English using real-world scenarios.",
+      results: "Delivered a LangGraph-orchestrated pipeline (transcript extraction, concept mapping, research, drafting, verification) with iterative quality checks and a Streamlit dashboard for end users.",
+      technologies: ["LangGraph", "Multi-Agent Systems", "LLMs", "Streamlit", "Python"],
+      category: "Generative AI",
+      link: "https://github.com/HarishNarasimhanK/DemystifyAI"
+    },
+    {
+      title: "DevForge",
+      icon: Terminal,
+      problem: "Provisioning a local development environment is repetitive and fragile — manual installs, configuration drift across machines, and non-idempotent scripts cause hours of setup pain.",
+      solution: "Built an automated, friction-free workstation bootstrap CLI targeting Windows WSL2 (Ubuntu) and macOS (Homebrew), distributed natively via APT and a Homebrew tap for one-command install and upgrades.",
+      results: "Single `dforge init` command bootstraps a full dev environment; includes doctor diagnostics, ShellCheck + bats tests, and CI/CD release automation for reproducible setups.",
+      technologies: ["Bash", "APT", "Homebrew", "WSL2", "CI/CD"],
+      category: "Developer Tooling",
+      link: "https://github.com/HarishNarasimhanK/dev-forge"
+    },
     {
       title: "Conversational PDF Query System",
       icon: MessageSquare,
       problem: "Users struggled to efficiently extract information from large PDF documents, requiring manual scanning and reading to find specific content.",
-      solution: "Developed an intelligent application that enables users to upload PDFs and query their content conversationally, supporting both text and voice input for seamless natural language interaction.",
-      results: "Created an intuitive interface that dramatically reduces document analysis time and improves accessibility for users with different interaction preferences.",
-      technologies: ["Python", "NLP", "Voice Recognition", "PDF Processing"],
+      solution: "Built a Retrieval-Augmented Generation (RAG) system for conversational PDF querying, integrating semantic search, LLM-based reasoning, and voice interactions.",
+      results: "Reduced query-response time by over 70% while supporting both text and voice input for natural, accessible interaction.",
+      technologies: ["Python", "RAG", "NLP", "Voice Recognition"],
       category: "AI Application"
     },
     {
@@ -24,13 +46,22 @@ const Projects = () => {
       link: "https://github.com/HarishNarasimhanK/Website-YouTube-URL-Summarizer"
     },
     {
+      title: "Anywhere Voyager — AI Trip Planner",
+      icon: Plane,
+      problem: "Planning personalized travel itineraries requires stitching together weather, places, currency, and cost data — a slow, manual research task.",
+      solution: "Built an AI-powered travel planning application using LangGraph and FastAPI, integrating multiple external APIs and agent-based workflows to generate personalized itineraries and recommendations.",
+      results: "Produces end-to-end travel plans on demand with agent-driven reasoning across live data sources.",
+      technologies: ["LangGraph", "FastAPI", "Agents", "Python"],
+      category: "Generative AI"
+    },
+    {
       title: "Sentiment Analysis on Movie Reviews",
       icon: Brain,
       problem: "Movie review platforms lacked automated sentiment classification, making it challenging to quickly understand overall audience opinion on films.",
-      solution: "Developed a sophisticated Streamlit-based sentiment analysis tool that classifies review text as positive or negative using advanced machine learning models.",
-      results: "Achieved high accuracy in sentiment classification, providing instant feedback on movie reception and enabling data-driven content recommendations.",
-      technologies: ["Streamlit", "Machine Learning", "Text Classification", "Python"],
-      category: "Data Science",
+      solution: "Developed a Streamlit-based sentiment analysis tool that classifies review text as positive or negative using a SimpleRNN trained on the IMDB dataset.",
+      results: "Achieved strong classification accuracy, providing instant feedback on movie reception.",
+      technologies: ["Streamlit", "SimpleRNN", "NLP", "Python"],
+      category: "Deep Learning",
       link: "https://github.com/HarishNarasimhanK/IMDB-MovieReview-SentimentAnalysis-using-SimpleRNN"
     },
     {
@@ -38,7 +69,7 @@ const Projects = () => {
       icon: FileText,
       problem: "Early diabetes detection required expensive and time-consuming medical tests, delaying crucial healthcare interventions for at-risk patients.",
       solution: "Developed a predictive model using SVM, AdaBoost, and Random Forest algorithms to identify diabetes risk factors and enable early intervention strategies.",
-      results: "SVM achieved the highest accuracy among tested models, providing healthcare professionals with a reliable tool for preliminary diabetes screening.",
+      results: "SVM achieved the highest accuracy among tested models, providing a reliable preliminary screening tool.",
       technologies: ["SVM", "AdaBoost", "Random Forest", "Healthcare Analytics"],
       category: "Machine Learning"
     },
@@ -46,12 +77,14 @@ const Projects = () => {
       title: "Block-Based Reversible Data Hiding Research",
       icon: Brain,
       problem: "Traditional data hiding techniques in encrypted images lacked robust security measures and efficient data concealment methods for sensitive information.",
-      solution: "Developed a novel technique using homomorphic encryption for secure data embedding and extraction in encrypted images, ensuring privacy preservation.",
-      results: "Successfully demonstrated enhanced security for data concealment while maintaining image quality, contributing to advances in secure communication protocols.",
+      solution: "Designed a reversible data-hiding framework using additive homomorphic encryption for secure embedding and extraction in encrypted images.",
+      results: "Achieved a 75% embedding capacity improvement with lossless image recovery while preserving data confidentiality.",
       technologies: ["Homomorphic Encryption", "Image Processing", "Cryptography", "Research"],
       category: "Research"
     }
   ];
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
   return (
     <section id="projects" className="py-32 bg-elegant-white">
@@ -61,13 +94,13 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-lg text-elegant-gray-600 max-w-3xl mx-auto">
-            A showcase of innovative solutions in AI, machine learning, and data science, 
+            A showcase of innovative solutions in AI, machine learning, and data science,
             demonstrating practical applications and measurable impact.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {projects.map((project, index) => {
+          {visibleProjects.map((project, index) => {
             const IconComponent = project.icon;
             return (
               <div key={index} className="card-elegant group animate-fade-in">
@@ -124,7 +157,7 @@ const Projects = () => {
                     <h4 className="font-semibold text-elegant-charcoal mb-3">Technologies</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
-                        <span 
+                        <span
                           key={techIndex}
                           className="text-xs bg-elegant-gray-100 text-elegant-gray-700 px-3 py-1 rounded-full"
                         >
@@ -138,6 +171,18 @@ const Projects = () => {
             );
           })}
         </div>
+
+        {projects.length > 4 && (
+          <div className="flex justify-center mt-12">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="btn-secondary"
+              aria-expanded={showAll}
+            >
+              {showAll ? 'Show Less' : `Show All (${projects.length})`}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
