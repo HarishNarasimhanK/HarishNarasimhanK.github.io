@@ -49,7 +49,7 @@ const About = () => {
             <div className="grid sm:grid-cols-3 gap-6">
               <div className="text-center p-6 card-elegant">
                 <GraduationCap className="w-8 h-8 text-elegant-charcoal mx-auto mb-3" />
-                <div className="font-bold text-2xl text-elegant-charcoal">9.37</div>
+                <div className="font-bold text-2xl text-elegant-charcoal">9.25</div>
                 <div className="text-sm text-elegant-gray-600">CGPA</div>
               </div>
               <div className="text-center p-6 card-elegant">
