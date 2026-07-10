@@ -27,9 +27,9 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-elegant-gray-700 leading-relaxed">
                 <p className="text-lg">
-                  I'm a passionate Computer Science Engineering student at SASTRA Deemed To Be University 
-                  with a stellar CGPA of 9.37, specializing in the cutting-edge fields of artificial intelligence 
-                  and machine learning.
+                  I'm a Computer Science Engineering student at SASTRA Deemed To Be University
+                  with a CGPA of 9.25, specializing in artificial intelligence,
+                  machine learning, and high-performance systems.
                 </p>
                 <p>
                   My journey in technology is driven by an insatiable curiosity for interdisciplinary AI applications, 
