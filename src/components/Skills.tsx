@@ -7,13 +7,13 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: Code,
-      skills: ["Python", "C++", "Java"],
+      skills: ["Python", "Java", "Rust", "C++", "SQL"],
       description: "Strong foundation in multiple programming paradigms"
     },
     {
       title: "AI & Machine Learning",
       icon: Brain,
-      skills: ["Machine Learning", "Natural Language Processing", "Generative AI", "LangChain", "Hugging Face"],
+      skills: ["Machine Learning", "NLP", "Generative AI", "RAG", "Multi-Agent Systems", "LangChain", "LangGraph", "HuggingFace", "PyTorch", "Scikit-learn"],
       description: "Advanced expertise in AI model development and deployment"
     },
     {
