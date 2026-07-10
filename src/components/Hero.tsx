@@ -17,10 +17,10 @@ const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-elegant-charcoal break-words px-4">
-              Harish Narasimhan K
+              Harish Narasimhan K — AI & Machine Learning Engineer
             </h1>
             <p className="text-xl lg:text-2xl text-elegant-gray-700 font-medium max-w-4xl mx-auto leading-relaxed px-4">
-              AI & Machine Learning Engineer
+              Building intelligent systems with NLP, generative AI, and data science
             </p>
             <p className="text-lg text-elegant-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               Motivated undergraduate with expertise in machine learning, NLP, and generative AI, 
