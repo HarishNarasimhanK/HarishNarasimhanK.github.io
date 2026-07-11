@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -40,7 +40,6 @@ const Contact = () => {
       icon: Mail,
       label: "Email",
       value: "harishnarasimhan0135@gmail.com",
-      secondary: "126003102@sastra.ac.in",
       href: "mailto:harishnarasimhan0135@gmail.com"
     },
     {
@@ -69,6 +68,12 @@ const Contact = () => {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/harish-narasimhan-k-17ba45254/",
       username: "harish-narasimhan-k"
+    },
+    {
+      icon: Twitter,
+      label: "Twitter",
+      href: "https://x.com/HarishK86889090",
+      username: "@HarishK86889090"
     }
   ];
 

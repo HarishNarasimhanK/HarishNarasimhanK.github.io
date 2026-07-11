@@ -1,63 +1,104 @@
 
 import React from 'react';
-import { Code, Brain, Database, Cpu, Zap } from 'lucide-react';
+import { Code, Brain, Database, Cloud, Cpu, Zap } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Programming Languages",
+      title: "Languages & Tooling",
       icon: Code,
-      skills: ["Python", "Java", "Rust", "C++", "SQL"],
-      description: "Strong foundation in multiple programming paradigms"
+      skills: ["Python", "Java", "Rust", "SQL", "Git", "GitHub"],
+      description: "Core languages and everyday engineering tooling"
     },
     {
       title: "AI & Machine Learning",
       icon: Brain,
-      skills: ["Machine Learning", "NLP", "Generative AI", "RAG", "Multi-Agent Systems", "LangChain", "LangGraph", "HuggingFace", "PyTorch", "Scikit-learn"],
-      description: "Advanced expertise in AI model development and deployment"
+      skills: [
+        "Machine Learning",
+        "Supervised Learning",
+        "Deep Learning",
+        "Deep Neural Networks",
+        "Natural Language Processing (NLP)",
+        "Large Language Models (LLMs)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Multi-Agent Systems",
+        "Semantic Search",
+        "Information Retrieval",
+        "LangGraph",
+        "LangChain",
+        "Hugging Face",
+        "PyTorch",
+        "Scikit-learn",
+        "Streamlit"
+      ],
+      description: "Applied AI, agentic systems, and production ML workflows"
     },
     {
-      title: "Data Science",
+      title: "Backend & Systems",
       icon: Database,
-      skills: ["Data Analytics", "Data Structures", "Algorithms"],
-      description: "Comprehensive data analysis and algorithmic problem-solving"
+      skills: [
+        "FastAPI",
+        "REST APIs",
+        "OpenSearch",
+        "DataFusion",
+        "Distributed Systems",
+        "Concurrency",
+        "Caching",
+        "JVM Internals",
+        "Memory Management",
+        "Performance Engineering",
+        "Performance Profiling",
+        "Benchmarking",
+        "Telemetry"
+      ],
+      description: "Production-grade backend and high-performance systems"
     },
     {
-      title: "Emerging Technologies",
+      title: "Cloud & Data Platforms",
+      icon: Cloud,
+      skills: [
+        "AWS CDK",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudWatch",
+        "GCP Vertex AI",
+        "Vertex AI",
+        "BigQuery",
+        "Google ADK",
+        "Databricks",
+        "Cloud Computing"
+      ],
+      description: "Cloud infrastructure and managed data/AI platforms"
+    },
+    {
+      title: "Cryptography & Research",
       icon: Cpu,
-      skills: ["Blockchain Development", "Interdisciplinary AI Applications"],
-      description: "Cutting-edge technology exploration and implementation"
+      skills: ["Homomorphic Encryption", "Cryptography", "Image Processing"],
+      description: "Research background in secure data hiding and encryption"
     },
     {
       title: "Competitive Programming",
       icon: Zap,
-      skills: ["LeetCode", "CodeChef", "Codeforces", "500+ Problems Solved"],
+      skills: ["LeetCode", "CodeChef", "Codeforces", "1000+ Problems Solved"],
       description: "Strong algorithmic thinking and problem-solving skills"
     }
-  ];
-
-  const certifications = [
-    "Data Analytics and Data Science - Technook (IIT Bhubaneswar)",
-    "Reinforcement Learning - NPTEL",
-    "Generative AI with LangChain and Hugging Face - Udemy",
-    "IBM Machine Learning Workshop - DAKSH"
   ];
 
   const codingPlatforms = [
     {
       name: "LeetCode",
       url: "https://leetcode.com/u/Harish_Narasimhan_K/",
-      description: "500+ problems solved"
+      description: "Knight · Max rating 1999 · 650+ problems solved"
     },
     {
       name: "CodeChef",
       url: "https://www.codechef.com/users/harishk_0135",
-      description: "Active participant in contests"
+      description: "3★ · Max rating 1606 · 500+ problems solved"
     },
     {
       name: "Codeforces",
-      url: "#",
-      description: "Regular competitive programming"
+      url: "https://codeforces.com/profile/Harish_0135",
+      description: "Rating 1100 · 50+ problems solved"
     }
   ];
 
@@ -69,7 +110,7 @@ const Skills = () => {
             Technical Competencies
           </h2>
           <p className="text-lg text-elegant-gray-600 max-w-3xl mx-auto">
-            A comprehensive skill set spanning artificial intelligence, machine learning, 
+            A comprehensive skill set spanning artificial intelligence, machine learning,
             and modern development technologies.
           </p>
         </div>
@@ -88,14 +129,14 @@ const Skills = () => {
                     {category.title}
                   </h3>
                 </div>
-                
+
                 <p className="text-sm text-elegant-gray-600 mb-4 leading-relaxed">
                   {category.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <span 
+                    <span
                       key={skillIndex}
                       className="text-xs bg-elegant-white text-elegant-gray-700 px-3 py-1 rounded-full border border-elegant-gray-200"
                     >
@@ -109,7 +150,7 @@ const Skills = () => {
         </div>
 
         {/* Coding Platforms */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto">
           <h3 className="font-display font-semibold text-2xl text-elegant-charcoal mb-8 text-center">
             Coding Platforms
           </h3>
@@ -120,50 +161,16 @@ const Skills = () => {
                   {platform.name}
                 </h4>
                 <p className="text-sm text-elegant-gray-600 mb-4">{platform.description}</p>
-                {platform.url !== "#" && (
-                  <a
-                    href={platform.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block text-elegant-charcoal hover:text-elegant-gray-600 transition-colors duration-300 text-sm font-medium"
-                  >
-                    View Profile →
-                  </a>
-                )}
+                <a
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-elegant-charcoal hover:text-elegant-gray-600 transition-colors duration-300 text-sm font-medium"
+                >
+                  View Profile →
+                </a>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="font-display font-semibold text-2xl text-elegant-charcoal mb-8 text-center">
-            Professional Certifications
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="flex items-start space-x-3 p-6 bg-elegant-white rounded-lg border border-elegant-gray-200 hover:shadow-md transition-all duration-300">
-                <div className="w-2 h-2 bg-elegant-charcoal rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-elegant-gray-700 leading-relaxed">{cert}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Languages */}
-        <div className="max-w-2xl mx-auto mt-16 text-center">
-          <h3 className="font-display font-semibold text-2xl text-elegant-charcoal mb-6">
-            Languages
-          </h3>
-          <div className="flex justify-center space-x-8">
-            <div className="text-center">
-              <div className="font-semibold text-lg text-elegant-charcoal">English</div>
-              <div className="text-sm text-elegant-gray-600">Professional Proficiency</div>
-            </div>
-            <div className="text-center">
-              <div className="font-semibold text-lg text-elegant-charcoal">Tamil</div>
-              <div className="text-sm text-elegant-gray-600">Native Speaker</div>
-            </div>
           </div>
         </div>
       </div>

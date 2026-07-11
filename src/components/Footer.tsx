@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter, Heart } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,6 +9,7 @@ const Footer = () => {
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
     { label: 'Skills', href: '#skills' },
+    { label: 'Open Source', href: '#open-source' },
     { label: 'Contact', href: '#contact' }
   ];
 
@@ -22,6 +23,11 @@ const Footer = () => {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/harish-narasimhan-k-17ba45254/",
       label: "LinkedIn"
+    },
+    {
+      icon: Twitter,
+      href: "https://x.com/HarishK86889090",
+      label: "Twitter"
     },
     {
       icon: Mail,
