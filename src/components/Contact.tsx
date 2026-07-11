@@ -254,20 +254,6 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        {/* Current Availability */}
-        <div className="max-w-2xl mx-auto mt-16 text-center">
-          <div className="p-6 bg-elegant-white rounded-xl border border-elegant-gray-200">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <CheckCircle className="w-5 h-5 text-green-500" />
-              <span className="font-semibold text-elegant-charcoal">Currently Available</span>
-            </div>
-            <p className="text-elegant-gray-600">
-              Seeking opportunities in data analysis, data science, or software development roles. 
-              Open to internships, full-time positions, and collaborative research projects.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

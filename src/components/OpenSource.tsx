@@ -1,11 +1,18 @@
-
-import React from 'react';
-import { GitPullRequest, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { GitPullRequest, ExternalLink, ChevronsUpDown } from 'lucide-react';
 
 const OpenSource = () => {
+  const [expandedIndices, setExpandedIndices] = useState<number[]>([]);
+
+  const toggleIndex = (index: number) => {
+    setExpandedIndices(prev =>
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
+
   const contributions = [
     {
-      title: "Memory retention fix in OpenSearch cluster manager",
+      title: "Optimizing memory management in the snapshot deletion workflow in the OpenSearch",
       repo: "opensearch-project/OpenSearch",
       prs: [
         { number: "#20858", url: "https://github.com/opensearch-project/OpenSearch/pull/20858" }
@@ -18,7 +25,7 @@ const OpenSource = () => {
         "Reduced memory overhead by over 99% during snapshot workloads and prevented cluster manager failures on long-running operations."
     },
     {
-      title: "Caches wired into the search query path for the DataFusion analytics engine",
+      title: "Caches integration to the search query path for the new opensearch analytics engine optimized for log analytics and observability.",
       repo: "opensearch-project/OpenSearch",
       prs: [
         { number: "#21225", url: "https://github.com/opensearch-project/OpenSearch/pull/21225" },
@@ -32,7 +39,7 @@ const OpenSource = () => {
         "Materially reduced query latency on the analytics backend and lowered load on the underlying storage layer."
     },
     {
-      title: "Cache and search metrics exposed on the analytics backend stats endpoint",
+      title: "Cache and search metrics exposure to the Stats API for improved observability and debugging.",
       repo: "opensearch-project/OpenSearch",
       prs: [
         { number: "#21854", url: "https://github.com/opensearch-project/OpenSearch/pull/21854" }
@@ -47,7 +54,7 @@ const OpenSource = () => {
   ];
 
   return (
-    <section id="open-source" className="py-32 bg-elegant-light">
+    <section id="open-source" className="py-32 bg-elegant-white">
       <div className="content-width section-padding">
         <div className="text-center mb-20">
           <h2 className="font-display font-bold text-display-sm text-elegant-charcoal mb-6">
@@ -60,37 +67,56 @@ const OpenSource = () => {
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {contributions.map((c, index) => (
-            <div key={index} className="card-elegant animate-fade-in">
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-elegant-gray-100 rounded-lg">
-                    <GitPullRequest size={22} />
+          {contributions.map((c, index) => {
+            const isExpanded = expandedIndices.includes(index);
+            return (
+              <div key={index} className="card-elegant animate-fade-in flex flex-col justify-between">
+                {/* Top Section */}
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-elegant-gray-100 rounded-lg text-elegant-charcoal">
+                      <GitPullRequest size={22} />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg text-elegant-charcoal leading-snug">
+                        {c.title}
+                      </h3>
+                      <p className="text-sm text-elegant-gray-700 mt-1">{c.repo}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-elegant-charcoal">
-                      {c.title}
-                    </h3>
-                    <p className="text-sm text-elegant-gray-700 mt-1">{c.repo}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4 text-sm leading-relaxed">
-                <div>
-                  <h4 className="font-semibold text-elegant-charcoal mb-1">Problem</h4>
-                  <p className="text-elegant-gray-600">{c.problem}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-elegant-charcoal mb-1">Solution</h4>
-                  <p className="text-elegant-gray-600">{c.solution}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-elegant-charcoal mb-1">Impact</h4>
-                  <p className="text-elegant-gray-600">{c.impact}</p>
+                  <button
+                    onClick={() => toggleIndex(index)}
+                    className="p-2 text-elegant-gray-600 hover:text-elegant-charcoal hover:bg-elegant-gray-100 rounded-full transition-colors duration-300 flex-shrink-0"
+                    aria-label={isExpanded ? "Collapse details" : "Expand details"}
+                  >
+                    <ChevronsUpDown size={20} className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                  </button>
                 </div>
 
-                <div className="flex flex-wrap gap-3 pt-2">
+                {/* Collapsible Middle Section */}
+                <div className={`grid transition-all duration-300 ease-in-out ${
+                  isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                }`}>
+                  <div className="overflow-hidden">
+                    <div className="space-y-4 text-sm leading-relaxed pt-6 pb-2 border-t border-elegant-gray-100 mt-4">
+                      <div>
+                        <h4 className="font-semibold text-elegant-charcoal mb-1">Problem</h4>
+                        <p className="text-elegant-gray-600">{c.problem}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-elegant-charcoal mb-1">Solution</h4>
+                        <p className="text-elegant-gray-600">{c.solution}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-elegant-charcoal mb-1">Impact</h4>
+                        <p className="text-elegant-gray-600">{c.impact}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Section (PR Links) */}
+                <div className="flex flex-wrap gap-3 pt-4 mt-2 border-t border-elegant-gray-100/50">
                   {c.prs.map((pr, i) => (
                     <a
                       key={i}
@@ -105,8 +131,8 @@ const OpenSource = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

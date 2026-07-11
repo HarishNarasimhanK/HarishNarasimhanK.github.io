@@ -11,9 +11,9 @@ const About = () => {
           <div className="relative animate-fade-in">
             <div className="relative">
               <img
-                src="/lovable-uploads/1dc3e4af-f4b5-4876-8078-1b5e87e4e7b8.png"
+                src="/uploads/harish_profile.jpg"
                 alt="Harish Narasimhan K - Professional Headshot"
-                className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
+                className="w-full max-w-md mx-auto rounded-2xl shadow-lg object-cover aspect-[3/4]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-elegant-charcoal/10 to-transparent rounded-2xl"></div>
             </div>

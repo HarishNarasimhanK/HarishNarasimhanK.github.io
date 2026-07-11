@@ -53,8 +53,8 @@ const Footer = () => {
               Harish Narasimhan K
             </div>
             <p className="text-elegant-gray-300 leading-relaxed mb-6 max-w-md">
-              AI & Machine Learning Engineer passionate about creating innovative solutions 
-              through data-driven technologies and cutting-edge research.
+              Focusing on backend systems, machine learning pipelines, and building from first principles.
+              Dedicated to performance optimization and robust engineering.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
@@ -126,11 +126,6 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-elegant-gray-300 text-sm">
               © {currentYear} Harish Narasimhan K. All rights reserved.
-            </div>
-            <div className="flex items-center space-x-1 text-elegant-gray-300 text-sm">
-              <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-400 fill-current" />
-              <span>and modern web technologies</span>
             </div>
           </div>
         </div>

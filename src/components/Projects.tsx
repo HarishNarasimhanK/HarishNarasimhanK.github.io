@@ -12,7 +12,7 @@ const Projects = () => {
       problem: "Large frontier LLMs summarize educational content well but at high cost, and general-purpose summarizers strip away the technical depth freshers actually need to learn a topic from scratch.",
       solution: "Built a multi-agent demystifier (not a plain summarizer) that orchestrates small, specialized models to produce first-principles, jargon-free explanations of educational YouTube videos — preserving technical detail while dramatically cutting inference cost.",
       results: "LangGraph pipeline (transcript extraction, concept mapping, research, drafting, verification) delivers frontier-model-quality explanations at a fraction of the cost, tailored for freshers new to tech.",
-      technologies: ["LangGraph", "Multi-Agent Systems", "Small LLMs", "Streamlit", "Python"],
+      technologies: ["LangGraph", "Multi-Agent Systems", "Streamlit", "Python"],
       category: "Generative AI",
       link: "https://github.com/HarishNarasimhanK/DemystifyAI"
     },
@@ -41,7 +41,7 @@ const Projects = () => {
       problem: "Trip planning forces users to jump between a dozen tabs — hotel booking sites, restaurant reviews, tourist attractions, weather, budgets, and currency conversion — making the whole process slow and painful.",
       solution: "A one-stop AI-powered travel companion that answers every planning query in natural language. Under the hood it orchestrates a suite of backend tools — weather lookup, restaurant and hotel search, tourist attraction discovery, budget estimation, and currency conversion for overseas travel — through a LangGraph agent workflow served over FastAPI.",
       results: "Delivers personalized end-to-end itineraries on demand, replacing hours of manual research across scattered platforms with a single conversational interface.",
-      technologies: ["LangGraph", "FastAPI", "Multi-Agent Systems", "Tool Use", "Python"],
+      technologies: ["LangGraph", "FastAPI", "Multi-Agent Systems", "tool calling", "Python"],
       category: "Generative AI"
     },
     {

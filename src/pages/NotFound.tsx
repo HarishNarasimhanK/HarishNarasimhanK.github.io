@@ -18,7 +18,7 @@ const NotFound = () => {
     const title = "Page Not Found | Harish Narasimhan K";
     const description =
       "The page you're looking for doesn't exist. Head back to Harish Narasimhan K's AI & ML portfolio homepage.";
-    const url = `https://harish-ai-showcase.lovable.app${location.pathname}`;
+    const url = `${window.location.origin}${location.pathname}`;
 
     document.title = title;
 

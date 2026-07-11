@@ -17,7 +17,7 @@ const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-elegant-charcoal break-words px-4">
-              Harish Narasimhan K — AI & Machine Learning Engineer
+              Harish Narasimhan K — AI/ML & Backend Developer
             </h1>
             <p className="text-xl lg:text-2xl text-elegant-gray-700 font-medium max-w-4xl mx-auto leading-relaxed px-4">
               Building intelligent systems with NLP, generative AI, and data science
@@ -38,9 +38,17 @@ const Hero = () => {
               View My Work
               <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
             </button>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1Z4LatdYME51E9y8eBQFur4XTrmlFhE7X"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Download Resume
+            </a>
             <a 
               href="#contact" 
-              className="btn-secondary"
+              className="text-elegant-gray-700 hover:text-elegant-charcoal font-medium px-4 py-2 transition-colors duration-300"
               onClick={(e) => {
                 e.preventDefault();
                 const contactSection = document.querySelector('#contact');

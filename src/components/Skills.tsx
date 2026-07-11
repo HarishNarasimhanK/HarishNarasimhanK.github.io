@@ -88,17 +88,17 @@ const Skills = () => {
     {
       name: "LeetCode",
       url: "https://leetcode.com/u/Harish_Narasimhan_K/",
-      description: "Knight · Max rating 1999 · 650+ problems solved"
+      description: ["Knight · Max rating 1999", "650+ problems solved"]
     },
     {
       name: "CodeChef",
       url: "https://www.codechef.com/users/harishk_0135",
-      description: "3★ · Max rating 1606 · 500+ problems solved"
+      description: ["3★ · Max rating 1606", "500+ problems solved"]
     },
     {
       name: "Codeforces",
       url: "https://codeforces.com/profile/Harish_0135",
-      description: "Rating 1100 · 50+ problems solved"
+      description: ["Rating 1100", "50+ problems solved"]
     }
   ];
 
@@ -111,7 +111,7 @@ const Skills = () => {
           </h2>
           <p className="text-lg text-elegant-gray-600 max-w-3xl mx-auto">
             A comprehensive skill set spanning artificial intelligence, machine learning,
-            and modern development technologies.
+            and backend technologies.
           </p>
         </div>
 
@@ -160,7 +160,13 @@ const Skills = () => {
                 <h4 className="font-semibold text-lg text-elegant-charcoal mb-2">
                   {platform.name}
                 </h4>
-                <p className="text-sm text-elegant-gray-600 mb-4">{platform.description}</p>
+                <div className="mb-4">
+                  {platform.description.map((line, idx) => (
+                    <p key={idx} className="text-sm text-elegant-gray-600">
+                      {line}
+                    </p>
+                  ))}
+                </div>
                 <a
                   href={platform.url}
                   target="_blank"
