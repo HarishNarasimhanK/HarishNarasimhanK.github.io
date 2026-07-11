@@ -9,10 +9,10 @@ const Projects = () => {
     {
       title: "DemystifyAI",
       icon: Video,
-      problem: "General LLMs default to academic jargon and formulas when explaining technical content, forcing users to hand-craft massive prompts every time to get first-principles explanations.",
-      solution: "Built an autonomous multi-agent engineering pipeline that ingests educational YouTube videos and produces comprehensive, first-principles explanations by translating jargon into plain-English using real-world scenarios.",
-      results: "Delivered a LangGraph-orchestrated pipeline (transcript extraction, concept mapping, research, drafting, verification) with iterative quality checks and a Streamlit dashboard for end users.",
-      technologies: ["LangGraph", "Multi-Agent Systems", "LLMs", "Streamlit", "Python"],
+      problem: "Large frontier LLMs summarize educational content well but at high cost, and general-purpose summarizers strip away the technical depth freshers actually need to learn a topic from scratch.",
+      solution: "Built a multi-agent demystifier (not a plain summarizer) that orchestrates small, specialized models to produce first-principles, jargon-free explanations of educational YouTube videos — preserving technical detail while dramatically cutting inference cost.",
+      results: "LangGraph pipeline (transcript extraction, concept mapping, research, drafting, verification) delivers frontier-model-quality explanations at a fraction of the cost, tailored for freshers new to tech.",
+      technologies: ["LangGraph", "Multi-Agent Systems", "Small LLMs", "Streamlit", "Python"],
       category: "Generative AI",
       link: "https://github.com/HarishNarasimhanK/DemystifyAI"
     },
@@ -36,6 +36,15 @@ const Projects = () => {
       category: "AI Application"
     },
     {
+      title: "Anywhere Voyager — AI Trip Planner",
+      icon: Plane,
+      problem: "Trip planning forces users to jump between a dozen tabs — hotel booking sites, restaurant reviews, tourist attractions, weather, budgets, and currency conversion — making the whole process slow and painful.",
+      solution: "A one-stop AI-powered travel companion that answers every planning query in natural language. Under the hood it orchestrates a suite of backend tools — weather lookup, restaurant and hotel search, tourist attraction discovery, budget estimation, and currency conversion for overseas travel — through a LangGraph agent workflow served over FastAPI.",
+      results: "Delivers personalized end-to-end itineraries on demand, replacing hours of manual research across scattered platforms with a single conversational interface.",
+      technologies: ["LangGraph", "FastAPI", "Multi-Agent Systems", "Tool Use", "Python"],
+      category: "Generative AI"
+    },
+    {
       title: "Document Summarization Web App",
       icon: Globe,
       problem: "Information overload from lengthy web articles and YouTube videos made it difficult for users to quickly grasp key insights and main points.",
@@ -44,15 +53,6 @@ const Projects = () => {
       technologies: ["Streamlit", "Groq API", "LangChain", "Web Scraping"],
       category: "Web Application",
       link: "https://github.com/HarishNarasimhanK/Website-YouTube-URL-Summarizer"
-    },
-    {
-      title: "Anywhere Voyager — AI Trip Planner",
-      icon: Plane,
-      problem: "Planning personalized travel itineraries requires stitching together weather, places, currency, and cost data — a slow, manual research task.",
-      solution: "Built an AI-powered travel planning application using LangGraph and FastAPI, integrating multiple external APIs and agent-based workflows to generate personalized itineraries and recommendations.",
-      results: "Produces end-to-end travel plans on demand with agent-driven reasoning across live data sources.",
-      technologies: ["LangGraph", "FastAPI", "Agents", "Python"],
-      category: "Generative AI"
     },
     {
       title: "Sentiment Analysis on Movie Reviews",
