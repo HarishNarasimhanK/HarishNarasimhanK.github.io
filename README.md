@@ -21,3 +21,4 @@ I structured the content to focus on real engineering results:
 - **Open Source**: Expanding blocks showing the specific problems, solutions, and performance impact of my pull requests in OpenSearch.
 - **Projects**: Clean card layouts outlining what I built (e.g. multi-agent systems with LangGraph, CLIs, RAG tools) and the exact outcomes.
 - **Competencies**: A simple categorized view of my programming languages, frameworks, cloud tooling, and algorithms background.
+
