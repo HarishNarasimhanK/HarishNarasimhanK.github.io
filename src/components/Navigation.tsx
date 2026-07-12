@@ -57,14 +57,6 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <a
-              href="https://drive.google.com/uc?export=download&id=1Z4LatdYME51E9y8eBQFur4XTrmlFhE7X"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-elegant-charcoal text-elegant-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-elegant-gray-800 hover:shadow-md hover:-translate-y-0.5"
-            >
-              Resume
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,16 +81,6 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <div className="px-6 py-3">
-                <a
-                  href="https://drive.google.com/uc?export=download&id=1Z4LatdYME51E9y8eBQFur4XTrmlFhE7X"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center bg-elegant-charcoal text-elegant-white px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-elegant-gray-800"
-                >
-                  Download Resume
-                </a>
-              </div>
             </div>
           </div>
         )}

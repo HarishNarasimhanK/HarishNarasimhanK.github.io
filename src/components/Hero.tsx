@@ -1,6 +1,12 @@
-
 import React from 'react';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, FileText, Download } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -30,25 +36,53 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 px-4">
-            <button 
-              onClick={scrollToAbout}
-              className="btn-primary group flex items-center"
-            >
-              View My Work
-              <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
-            </button>
-            <a
-              href="https://drive.google.com/uc?export=download&id=1Z4LatdYME51E9y8eBQFur4XTrmlFhE7X"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              Download Resume
-            </a>
+          <div className="flex flex-col items-center gap-6 pt-8 px-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+              <button 
+                onClick={scrollToAbout}
+                className="btn-primary group flex items-center justify-center"
+              >
+                View My Work
+                <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
+              </button>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="btn-secondary flex items-center justify-center gap-2">
+                    <FileText className="w-4 h-4" />
+                    <span>View Resume</span>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-5xl w-[95vw] h-[90vh] bg-elegant-white border border-elegant-gray-200 shadow-xl rounded-xl p-6 flex flex-col">
+                  <DialogHeader className="flex flex-row items-center justify-between border-b border-elegant-gray-100 pb-4 mb-4 pr-10">
+                    <div>
+                      <DialogTitle className="font-display font-bold text-2xl text-elegant-charcoal">
+                        Resume — Harish Narasimhan K
+                      </DialogTitle>
+                    </div>
+                    <a
+                      href="/Harish_Resume.pdf"
+                      download="Harish_Resume.pdf"
+                      className="inline-flex items-center gap-2 bg-elegant-charcoal text-elegant-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-elegant-gray-800 hover:shadow-md"
+                    >
+                      <Download className="w-4 h-4" />
+                      <span>Download</span>
+                    </a>
+                  </DialogHeader>
+                  <div className="flex-1 w-full overflow-hidden rounded-lg border border-elegant-gray-200 bg-elegant-light">
+                    <iframe
+                      src="/Harish_Resume.pdf#view=Fit"
+                      className="w-full h-full"
+                      title="Harish Narasimhan K Resume"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
+
             <a 
               href="#contact" 
-              className="text-elegant-gray-700 hover:text-elegant-charcoal font-medium px-4 py-2 transition-colors duration-300"
+              className="inline-flex items-center gap-1.5 text-elegant-gray-600 hover:text-elegant-charcoal font-medium text-sm transition-all duration-300 group hover:translate-y-0.5 pt-2"
               onClick={(e) => {
                 e.preventDefault();
                 const contactSection = document.querySelector('#contact');
@@ -57,7 +91,8 @@ const Hero = () => {
                 }
               }}
             >
-              Get In Touch
+              <span>Get In Touch</span>
+              <ArrowDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
             </a>
           </div>
 
