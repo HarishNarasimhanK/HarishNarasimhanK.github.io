@@ -17,45 +17,14 @@ const navItems = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('#hero');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      if (window.scrollY < 100) {
-        setActiveSection('#hero');
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '-30% 0px -50% 0px',
-      threshold: 0,
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(`#${entry.target.id}`);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    navItems.forEach((item) => {
-      const element = document.querySelector(item.href);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
@@ -79,22 +48,15 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.href;
-              return (
-                <button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className={`transition-all duration-300 py-1 text-sm ${
-                    isActive
-                      ? 'text-elegant-charcoal font-semibold'
-                      : 'text-elegant-gray-400 hover:text-elegant-charcoal font-medium'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.href)}
+                className="text-elegant-gray-700 hover:text-elegant-charcoal transition-colors duration-300 font-medium"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,22 +72,15 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-elegant-white border-t border-elegant-gray-200 shadow-lg">
             <div className="py-4 space-y-2">
-              {navItems.map((item) => {
-                const isActive = activeSection === item.href;
-                return (
-                  <button
-                    key={item.label}
-                    onClick={() => scrollToSection(item.href)}
-                    className={`block w-full text-left px-6 py-3 transition-colors duration-300 ${
-                      isActive
-                        ? 'text-elegant-charcoal font-semibold bg-elegant-gray-100'
-                        : 'text-elegant-gray-500 hover:text-elegant-charcoal font-medium'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                );
-              })}
+              {navItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => scrollToSection(item.href)}
+                  className="block w-full text-left px-6 py-3 text-elegant-gray-700 hover:text-elegant-charcoal hover:bg-elegant-gray-100 transition-colors duration-300"
+                >
+                  {item.label}
+                </button>
+              ))}
             </div>
           </div>
         )}

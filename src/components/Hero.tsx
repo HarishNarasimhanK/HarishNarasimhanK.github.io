@@ -22,16 +22,16 @@ const Hero = () => {
         <div className="text-center space-y-8 animate-fade-in">
           {/* Main Heading */}
           <div className="space-y-4">
-            <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-elegant-charcoal break-words px-4">
+            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-elegant-charcoal break-words px-4">
               Harish Narasimhan K
             </h1>
-            <p className="text-2xl sm:text-3xl lg:text-4xl text-elegant-gray-700 font-semibold max-w-4xl mx-auto px-4 mt-2 font-display">
+            <p className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-elegant-charcoal break-words px-4 mt-2">
               AI/ML & Backend Engineer
             </p>
-            <p className="text-lg sm:text-xl text-elegant-gray-600 max-w-3xl mx-auto leading-relaxed px-4 pt-2">
+            <p className="text-xl lg:text-2xl text-elegant-gray-700 font-medium max-w-4xl mx-auto leading-relaxed px-4 pt-2">
               Building scalable solutions with Agentic AI, ML and Backend
             </p>
-            <p className="text-base text-elegant-gray-500 max-w-3xl mx-auto leading-relaxed px-4 pt-1 font-sans">
+            <p className="text-lg text-elegant-gray-600 max-w-3xl mx-auto leading-relaxed px-4 pt-2 font-sans">
               Engineer with experience building backend systems, contributing to OpenSearch, and 
               developing AI-powered applications. Interested in designing scalable software and 
               solving real-world engineering problems.
