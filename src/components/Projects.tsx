@@ -33,7 +33,8 @@ const Projects = () => {
       solution: "Built a Retrieval-Augmented Generation (RAG) system for conversational PDF querying, integrating semantic search, LLM-based reasoning, and voice interactions.",
       results: "Reduced query-response time by over 70% while supporting both text and voice input for natural, accessible interaction.",
       technologies: ["Python", "RAG", "NLP", "Voice Recognition"],
-      category: "AI Application"
+      category: "AI Application",
+      link: "https://github.com/HarishNarasimhanK/PDF-QnA-ChatBot"
     },
     {
       title: "Anywhere Voyager — AI Trip Planner",
@@ -42,7 +43,8 @@ const Projects = () => {
       solution: "A one-stop AI-powered travel companion that answers every planning query in natural language. Under the hood it orchestrates a suite of backend tools — weather lookup, restaurant and hotel search, tourist attraction discovery, budget estimation, and currency conversion for overseas travel — through a LangGraph agent workflow served over FastAPI.",
       results: "Delivers personalized end-to-end itineraries on demand, replacing hours of manual research across scattered platforms with a single conversational interface.",
       technologies: ["LangGraph", "FastAPI", "Multi-Agent Systems", "tool calling", "Python"],
-      category: "Generative AI"
+      category: "Generative AI",
+      link: "https://github.com/HarishNarasimhanK/AI-Trip-Planner"
     },
     {
       title: "Document Summarization Web App",
@@ -65,13 +67,14 @@ const Projects = () => {
       link: "https://github.com/HarishNarasimhanK/IMDB-MovieReview-SentimentAnalysis-using-SimpleRNN"
     },
     {
-      title: "Diabetes Prediction System",
-      icon: FileText,
-      problem: "Early diabetes detection required expensive and time-consuming medical tests, delaying crucial healthcare interventions for at-risk patients.",
-      solution: "Developed a predictive model using SVM, AdaBoost, and Random Forest algorithms to identify diabetes risk factors and enable early intervention strategies.",
-      results: "SVM achieved the highest accuracy among tested models, providing a reliable preliminary screening tool.",
-      technologies: ["SVM", "AdaBoost", "Random Forest", "Healthcare Analytics"],
-      category: "Machine Learning"
+      title: "Transformer from Scratch",
+      icon: Brain,
+      problem: "Understanding the inner workings of modern LLMs requires moving beyond pre-built API wrappers to implement the core mathematical components from first principles.",
+      solution: "Implemented a GPT-3 style Decoder-Only Transformer architecture from scratch in PyTorch, developing custom multi-head causal attention, positional encodings, and feed-forward blocks.",
+      results: "Successfully trained the custom architecture on a language modeling corpus, validating causal masking, training convergence, and sequence generation metrics.",
+      technologies: ["Python", "PyTorch", "Transformers", "Deep Learning", "NLP"],
+      category: "Deep Learning",
+      link: "https://github.com/HarishNarasimhanK/Transformer-from-scratch"
     },
     {
       title: "Block-Based Reversible Data Hiding Research",
@@ -80,7 +83,8 @@ const Projects = () => {
       solution: "Designed a reversible data-hiding framework using additive homomorphic encryption for secure embedding and extraction in encrypted images.",
       results: "Achieved a 75% embedding capacity improvement with lossless image recovery while preserving data confidentiality.",
       technologies: ["Homomorphic Encryption", "Image Processing", "Cryptography", "Research"],
-      category: "Research"
+      category: "Research",
+      link: "https://github.com/HarishNarasimhanK/Block-Based-Separable-Reversible-Data-Hiding-Using-Homomorphic-Encryption"
     }
   ];
 
