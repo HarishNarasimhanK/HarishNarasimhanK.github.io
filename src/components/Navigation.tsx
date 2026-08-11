@@ -42,9 +42,12 @@ const Navigation = () => {
       <div className="content-width section-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-display font-bold text-xl text-elegant-charcoal">
+          <button
+            onClick={() => window.location.reload()}
+            className="font-display font-bold text-xl text-elegant-charcoal cursor-pointer hover:opacity-80 transition-opacity"
+          >
             HNK
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
