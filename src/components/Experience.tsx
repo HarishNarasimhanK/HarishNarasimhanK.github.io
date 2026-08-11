@@ -8,6 +8,7 @@ const Experience = () => {
       title: "Software Development Engineer Intern",
       company: "Amazon Web Services (AWS)",
       period: "Jan 2026 – Jun 2026",
+      logo: "/uploads/aws_logo.png",
       bullets: [
         "Improved OpenSearch cluster stability by resolving a critical memory retention issue, reducing memory overhead by over 99% and preventing cluster manager failures during long-running snapshot operations.",
         "Developed a two-tier metadata and statistics caching system for OpenSearch's DataFusion analytics engine, reducing query latency by over 60%.",
@@ -19,6 +20,7 @@ const Experience = () => {
       title: "AI Engineer Intern",
       company: "QuickInsights.ai",
       period: "May 2025 – Jul 2025",
+      logo: "/uploads/quickinsights_logo.png",
       bullets: [
         "Engineered a production-grade Text-to-SQL AI agent that unifies fragmented marketing and operational data, enabling D2C e-commerce brands to query cross-channel performance in natural language.",
         "Implemented self-correcting ReAct LLM workflows to handle complex calculations (like full-funnel attribution, blended ROAS, and CAC) with high accuracy, translating raw enterprise data into actionable ROI strategies.",
@@ -44,8 +46,12 @@ const Experience = () => {
           {roles.map((role, index) => (
             <div key={index} className="card-elegant animate-fade-in">
               <div className="flex items-start space-x-4 mb-4">
-                <div className="p-3 bg-elegant-gray-100 rounded-lg">
-                  <Briefcase size={24} />
+                <div className="p-2 bg-elegant-white border border-elegant-gray-200 rounded-lg shadow-sm w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0">
+                  {role.logo ? (
+                    <img src={role.logo} alt={`${role.company} Logo`} className="w-10 h-10 object-contain" />
+                  ) : (
+                    <Briefcase className="w-6 h-6 text-elegant-charcoal" />
+                  )}
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">

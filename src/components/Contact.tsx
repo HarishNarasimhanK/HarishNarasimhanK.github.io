@@ -137,7 +137,7 @@ const Contact = () => {
               <h4 className="font-semibold text-lg text-elegant-charcoal mb-4">
                 Connect on Social Media
               </h4>
-              <div className="flex space-x-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
                   return (

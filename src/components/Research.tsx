@@ -7,7 +7,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import researchPresentation from '@/assets/Research_Presentation.pptx.asset.json';
 
 const Research = () => {
   return (
@@ -48,7 +47,7 @@ const Research = () => {
               
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
-                  href="https://ieeexplore.ieee.org/document/"
+                  href="https://ieeexplore.ieee.org/abstract/document/11134992?casa_token=j7noIsfsB-UAAAAA:fXJoUL3qdPzJ_NDd8TyfUz90kIvkwuq4D352s6t-iC9TjSoTAWhVGTh2W4epE99wD0tP6JGkJg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-elegant-charcoal hover:text-elegant-gray-600 transition-colors duration-300 underline underline-offset-4"
@@ -108,21 +107,12 @@ const Research = () => {
 
                     <div className="flex flex-wrap gap-4 pt-4 border-t border-elegant-gray-100">
                       <a
-                        href="https://ieeexplore.ieee.org/document/"
+                        href="https://ieeexplore.ieee.org/abstract/document/11134992?casa_token=j7noIsfsB-UAAAAA:fXJoUL3qdPzJ_NDd8TyfUz90kIvkwuq4D352s6t-iC9TjSoTAWhVGTh2W4epE99wD0tP6JGkJg"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-semibold text-elegant-charcoal hover:text-elegant-gray-600 transition-colors duration-300"
                       >
                         Read on IEEE Xplore
-                        <ExternalLink size={14} />
-                      </a>
-                      <a
-                        href={researchPresentation.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-elegant-charcoal hover:text-elegant-gray-600 transition-colors duration-300"
-                      >
-                        Download Presentation
                         <ExternalLink size={14} />
                       </a>
                     </div>
