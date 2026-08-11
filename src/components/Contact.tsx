@@ -14,6 +14,17 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  React.useEffect(() => {
+    // Dynamically load the Web3Forms script which renders hCaptcha
+    if (!document.querySelector('script[src="https://web3forms.com/client/script.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://web3forms.com/client/script.js';
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -31,6 +42,21 @@ const Contact = () => {
       return;
     }
 
+    // Get hCaptcha token
+    const hCaptchaToken = (e.currentTarget as HTMLFormElement).querySelector<HTMLTextAreaElement>(
+      'textarea[name="h-captcha-response"]'
+    )?.value;
+
+    if (!hCaptchaToken) {
+      toast({
+        title: "Captcha Required",
+        description: "Please complete the hCaptcha verification before sending your message.",
+        variant: "destructive"
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -44,7 +70,8 @@ const Contact = () => {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          botcheck: formData.botcheck
+          botcheck: formData.botcheck,
+          "h-captcha-response": hCaptchaToken
         })
       });
 
@@ -55,6 +82,11 @@ const Contact = () => {
           description: "Thank you for your message. I'll get back to you soon.",
         });
         setFormData({ name: '', email: '', subject: '', message: '', botcheck: '' });
+        // Reset hCaptcha widget
+        const hcWindow = window as unknown as { hcaptcha?: { reset: () => void } };
+        if (hcWindow.hcaptcha) {
+          hcWindow.hcaptcha.reset();
+        }
       } else {
         toast({
           title: "Submission Failed",
@@ -286,6 +318,15 @@ const Contact = () => {
                     className="w-full px-4 py-3 border border-elegant-gray-200 rounded-lg focus:ring-2 focus:ring-elegant-charcoal focus:border-elegant-charcoal transition-colors duration-300 resize-none"
                     placeholder="Tell me about your project or opportunity..."
                   />
+                </div>
+
+                {/* hCaptcha Verification */}
+                <div className="flex justify-center sm:justify-start my-4">
+                  <div
+                    className="h-captcha"
+                    data-captcha="true"
+                    data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                  ></div>
                 </div>
 
                 <button
