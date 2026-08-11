@@ -22,3 +22,17 @@ I structured the content to focus on real engineering results:
 - **Projects**: Clean card layouts outlining what I built (e.g. multi-agent systems with LangGraph, CLIs, RAG tools) and the exact outcomes.
 - **Competencies**: A simple categorized view of my programming languages, frameworks, cloud tooling, and algorithms background.
 
+### 6. Secure Contact Form
+To turn the simulated contact form into a functional communication channel while protecting my inbox from automated spam, I integrated:
+- **Web3Forms**: A serverless forwarder that delivers submissions directly to my email.
+- **Honeypot Protection**: A hidden honeypot field (`botcheck`) that catches and drops simple bot submissions client-side.
+- **hCaptcha Integration**: A client-side hCaptcha widget that blocks scaled bot scripts from triggering API calls, automatically resetting on successful delivery.
+
+### 7. Search Engine Optimization (SEO) & Indexing
+- Built and submitted a dynamic `sitemap.xml` to define the site layout structure.
+- Configured rich OpenGraph (`og:image`, canonical URLs) and JSON-LD structured schema tags in `index.html`.
+- Verified domain ownership with Google Search Console via HTML verification to enable priority indexing.
+
+### 8. Performance Tuning
+- **Font Preconnecting**: Removed render-blocking `@import` rules in `index.css` and replaced them with preconnected Google Fonts `<link>` tags in `index.html` to prevent Flash of Unstyled Text (FOUT) and lower PageSpeed paint times.
+- **Asset Pipeline**: Created a custom logo processing script utilizing Jimp to crop, sharpen, and output transparent experience cards for logos like AWS and QuickInsights.ai.
