@@ -16,12 +16,13 @@ const Experience = () => {
       ]
     },
     {
-      title: "Backend AI Intern",
-      company: "Insightschakra Technologies Pvt. Ltd.",
+      title: "AI Engineer Intern",
+      company: "QuickInsights.ai",
       period: "May 2025 – Jul 2025",
       bullets: [
-        "Developed AI-powered business intelligence workflows on Vertex AI, transforming marketing and retail data into actionable insights through natural-language exploration of enterprise analytics.",
-        "Designed a multi-agent decision-support system using Google ADK, combining enterprise data retrieval and LLM reasoning for complex BigQuery analytical workloads.",
+        "Engineered a production-grade Text-to-SQL AI agent that unifies fragmented marketing and operational data, enabling D2C e-commerce brands to query cross-channel performance in natural language.",
+        "Implemented self-correcting ReAct LLM workflows to handle complex calculations (like full-funnel attribution, blended ROAS, and CAC) with high accuracy, translating raw enterprise data into actionable ROI strategies.",
+        "Architected a multi-agent decision-support system using Google ADK, leveraging tool-calling and semantic data retrieval to generate insights directly from enterprise BigQuery workloads.",
         "Optimized agent workflows through parallel execution, improving response reliability and reducing end-to-end query latency by 90%."
       ]
     }
