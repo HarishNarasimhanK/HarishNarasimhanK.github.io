@@ -9,13 +9,27 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    botcheck: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Intercept bot spam locally to save API requests limit
+    if (formData.botcheck) {
+      setTimeout(() => {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '', botcheck: '' });
+        setIsSubmitting(false);
+      }, 500);
+      return;
+    }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -29,7 +43,8 @@ const Contact = () => {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
-          message: formData.message
+          message: formData.message,
+          botcheck: formData.botcheck
         })
       });
 
@@ -39,7 +54,7 @@ const Contact = () => {
           title: "Message Sent!",
           description: "Thank you for your message. I'll get back to you soon.",
         });
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', subject: '', message: '', botcheck: '' });
       } else {
         toast({
           title: "Submission Failed",
@@ -198,6 +213,16 @@ const Contact = () => {
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot Spam Protection (invisible to humans, filled by bots) */}
+                <input
+                  type="text"
+                  name="botcheck"
+                  value={formData.botcheck}
+                  onChange={handleChange}
+                  style={{ display: 'none' }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-elegant-charcoal mb-2">
